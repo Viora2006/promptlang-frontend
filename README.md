@@ -1,16 +1,49 @@
-# React + Vite
+# PromptLang
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PromptLang is a full-stack AI coding assistant that allows users to create accounts, log in, submit programming prompts, and receive AI-generated code along with detailed explanations.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- User registration and authentication
+- Secure password storage
+- AI-generated code responses
+- AI-generated code explanations
+- Persistent PostgreSQL database storage
+- React frontend
+- Spring Boot backend
+- REST API architecture
+- Chat history persistence
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- React
+- JavaScript
+- Vite
+- Fetch API
 
-## Expanding the ESLint configuration
+### Backend
+- Java
+- Spring Boot
+- Spring Data JPA
+- Spring Security
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Database
+- PostgreSQL
+
+### AI Integration
+- OpenAI API
+
+## Architecture
+
+```text
+React Frontend
+      ↓
+REST API
+      ↓
+Spring Boot Backend
+      ↓
+PostgreSQL Database
+
+      ↓
+OpenAI API
