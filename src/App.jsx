@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [token, setToken] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
   const [username, setUsername] = useState("");
@@ -34,7 +35,7 @@ function App() {
       }
 
       const data = await response.json();
-
+      setToken(data.token);
       setAuthMessage(data.message || "Login successful");
       setLoggedIn(true);
     } catch (error) {
@@ -84,7 +85,7 @@ function App() {
         },
         body: JSON.stringify({
           message: prompt,
-          username: username,
+          token: token,
         }),
       });
 
@@ -107,11 +108,12 @@ function App() {
 
   function handleLogout() {
     setLoggedIn(false);
-    setPassword("");
-    setPrompt("");
-    setCode("");
-    setExplanation("");
-    setAuthMessage("");
+  setToken("");
+  setPassword("");
+  setPrompt("");
+  setCode("");
+  setExplanation("");
+  setAuthMessage("");
   }
 
   if (!loggedIn) {
